@@ -1,11 +1,12 @@
 import java.util.Scanner;
 
 public class Pokemon {
+    // свойства и методы родительского класса
     private int maxHP;
     private static final double additionalHP;
 
     static {
-        // запрос значения additionalHP
+        // запрос значения additionalHP от пользователя
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the value for additionalHP:");
         additionalHP = scanner.nextDouble();
@@ -42,6 +43,7 @@ public class Pokemon {
 
     public void someMethod() {
         double actualMaxHP = maxHP + additionalHP;
+        // остальной код
     }
 
     public void fight() {
@@ -57,7 +59,10 @@ public class Pokemon {
     void somePackagePrivateMethod() {
         // код
     }
+
+    // Если метод или поле должны быть доступны только внутри текущего класса, используйте private:
     private void somePrivateMethod() {
+        // код
     }
 
     public static void main(String[] args) {
@@ -80,12 +85,14 @@ public class Pokemon {
 }
 
 class Charmander extends Pokemon {
+    // свойства и методы подкласса Charmander
     public Charmander() {
         super("Charmander", "Fire", null, 39, 52, 43, 60, 50, 65);
     }
 }
 
 class Bulbasaur extends Pokemon {
+    // свойства и методы подкласса Bulbasaur
     public Bulbasaur() {
         super("Bulbasaur", "Grass", "Poison", 45, 49, 49, 65, 65, 45);
     }
